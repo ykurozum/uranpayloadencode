@@ -4,6 +4,6 @@ import com.fasterxml.jackson.databind.JsonNode;
 
 public interface PayloadEncoder {
 
-	public JsonNode encode( String[] payloadStrings) throws Exception;
+	public JsonNode encode(String[] payloadStrings) throws Exception;
 
 }
