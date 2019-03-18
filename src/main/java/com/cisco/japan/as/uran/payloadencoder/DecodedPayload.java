@@ -6,9 +6,13 @@ import com.fasterxml.jackson.databind.JsonNode;
 
 public class DecodedPayload {
 	/**
-	 *  データ自体が表す特定の時間（通常はデータの採取時刻）
+	 *  EncodedPayloadで渡された時間
 	 */
 	Date  time;
+	/**
+	 *  データ自体が表す特定の時間（通常はデータの採取時刻）
+	 */
+	Date  payloadTime;
 	/**
 	 * デコード前のpayload(通常は対応するEncodedPayloadの値をセット）
 	 */
@@ -49,6 +53,12 @@ public class DecodedPayload {
 	}
 	public void setDeviceIdentifiyer(String deviceIdentifiyer) {
 		this.deviceIdentifiyer = deviceIdentifiyer;
+	}
+	public Date getPayloadTime() {
+		return payloadTime;
+	}
+	public void setPayloadTime(Date payloadTime) {
+		this.payloadTime = payloadTime;
 	}
 
 }
