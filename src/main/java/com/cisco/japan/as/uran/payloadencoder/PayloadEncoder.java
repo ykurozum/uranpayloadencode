@@ -2,8 +2,6 @@ package com.cisco.japan.as.uran.payloadencoder;
 
 import java.util.List;
 
-import com.fasterxml.jackson.databind.JsonNode;
-
 
 /**
  * ï‘ãpílÇÕâ∫ãLÇÃJsonNodeÇÃListÅB
@@ -17,7 +15,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 				"Longitude": "139.75495999999998",
 				"Latitude": "35.649792999999995",
 				"GpsFixStatus": "not fix",
-				"ReportType": "Periodic mode repport",
+				"ReportType": "Periodic mode report",
 				"BatteryCapacity": "65",
 				"Date&Time": "2014-10-10T13:50:40+09:00" // ISO 8601èÄãí
 			}
@@ -30,6 +28,6 @@ import com.fasterxml.jackson.databind.JsonNode;
  */
 public interface PayloadEncoder {
 
-	public List<JsonNode> encode(List<EncodedPayload> encodedPayloadList) throws Exception;
+	public List<DecodedPayload> encode(List<EncodedPayload> encodedPayloadList) throws Exception;
 
 }

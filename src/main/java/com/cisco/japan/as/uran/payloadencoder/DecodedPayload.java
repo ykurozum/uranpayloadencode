@@ -12,7 +12,7 @@ public class DecodedPayload {
 	/**
 	 *  データ自体が表す特定の時間（通常はデータの採取時刻）
 	 */
-	Date  payloadTime;
+	Date payloadTime;
 	/**
 	 * デコード前のpayload(通常は対応するEncodedPayloadの値をセット）
 	 */
@@ -26,9 +26,12 @@ public class DecodedPayload {
 	 */
 	String deviceIdentifiyer;
 	
-	public DecodedPayload(Date time, String payloadString) {
+	public DecodedPayload(Date time,Date  payloadTime, String payloadString,JsonNode palyloadJson,String deviceIdentifiyer) {
 		this.time = time;
+		this.payloadTime = payloadTime;
 		this.payloadString = payloadString;
+		this.palyloadJson = palyloadJson;
+		this.deviceIdentifiyer =deviceIdentifiyer;	
 	}
 	public Date getTime() {
 		return time;
@@ -60,5 +63,4 @@ public class DecodedPayload {
 	public void setPayloadTime(Date payloadTime) {
 		this.payloadTime = payloadTime;
 	}
-
 }
