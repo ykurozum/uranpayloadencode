@@ -21,6 +21,18 @@ public class CommonUtils {
 		return Long.parseLong(val, 16);
 
 	}
+	
+	/**
+	 * 10進数へ変換
+	 * 
+	 * @param val 変換対象
+	 * @return 10進数の値
+	 */
+	public static int toDecimalNumberInt(String val) {
+
+		return Integer.parseInt(val, 16);
+
+	}
 
 	/**
 	 * 2進数へ変換
@@ -45,6 +57,23 @@ public class CommonUtils {
 		buf.flip();
 		buf.order(ByteOrder.LITTLE_ENDIAN);
 		int littleVal = buf.getInt();
+		return littleVal;
+
+	}
+	
+	/**
+	 * リトルエンディアン変換(short.ver)
+	 * ４桁変換時に使用
+	 * @param val 変換対象
+	 * @return 変換後の値
+	 */
+	public static short toLittleEndianShort(BigInteger val) {
+
+		ByteBuffer buf = ByteBuffer.allocate(2);
+		buf.putShort(val.shortValue());
+		buf.flip();
+		buf.order(ByteOrder.LITTLE_ENDIAN);
+		short littleVal = buf.getShort();
 		return littleVal;
 
 	}
